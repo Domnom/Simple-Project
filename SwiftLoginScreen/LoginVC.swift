@@ -69,10 +69,20 @@ class LoginVC: UIViewController {
             if (urlData != nil) {
                 let res = response as NSHTTPURLResponse!;
                 
-                NSLog("Response code: %1d", res.statusCode);
-                
-                if (res.statusCode >= 200 && res.statusCode < 300) {
+                NSLog ("Response test: %@", NSString(data:urlData!, encoding:NSUTF8StringEncoding)!)
+                // NSLog("Response code: %1d", res.statusCode);   //Fatal error here
+
+                // When user enters an invalid pin, NSURLResponse? returns nil
+                // NSError? does not supply the required information (no httpcode)
+                // Extract error array from NSData? and print to user
+              
+                /* NOTE:
+                 *  - if sent pin is invalid, res == nil
+                 *  - Use else to extract error code from jsonData and print to user
+                 */
+                if (res == nil || res.statusCode >= 200 && res.statusCode < 300) {
                     var responseData:NSString = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
+                    
                     
                     NSLog("Response ==> %@", responseData);
                     
@@ -83,26 +93,33 @@ class LoginVC: UIViewController {
                     let success:NSInteger = jsonData.valueForKey("success") as NSInteger
                     
                     NSLog("Success: %1d", success);
-                    
+               //VALID PIN
                     if (success == 1) {
                         NSLog("Login Success!");
                         
                         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-                        //prefs.setObject(username, forKey: "USERNAME")
+                        
                         prefs.setObject(pin, forKey:"PIN")
                         prefs.setInteger(1, forKey: "ISLOGGEDIN")
                         prefs.synchronize()
-                        NSLog("Okay here")
                         self.dismissViewControllerAnimated(true, completion:nil)
-                        NSLog("Still Okay")
+                   
+                        
+                //INVALID PIN
                     } else {
                         var error_msg:NSString
                         
-                        if jsonData["error_message"] as? NSString != nil {
-                            error_msg = jsonData["error_message"] as NSString
+                        let errorArray = jsonData["errors"] as NSArray
+                        let errorDict = errorArray[0] as NSDictionary
+                        
+                        let err = errorDict["title"] as NSString
+                        
+                        if (errorDict["title"] as? NSString != nil) {
+                            error_msg = errorDict["title"] as NSString
                         } else {
                             error_msg = "Unknown Error"
                         }
+                      
                         var alertView:UIAlertView = UIAlertView()
                         alertView.title = "Sign in failed!"
                         alertView.message = error_msg
@@ -110,6 +127,9 @@ class LoginVC: UIViewController {
                         alertView.addButtonWithTitle("Ok")
                         alertView.show()
                     }
+                    
+        //Unsure if code here will ever be executed - User may have a valid pin but is unable to reach server
+        
                 } else {
                     var alertView:UIAlertView = UIAlertView()
                     alertView.title = "Sign in failed!"

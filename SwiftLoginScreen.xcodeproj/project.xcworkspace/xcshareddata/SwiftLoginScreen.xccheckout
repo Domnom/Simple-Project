@@ -12,22 +12,34 @@
 	<dict>
 		<key>A6152A06A8E54A8A93BC27E956BFDDFD9056C8E0</key>
 		<string>https://github.com/Domnom/SuperLogical-simple-project.git</string>
+		<key>E80D86D2B7AD7A1BEE05BA4A4FD7B9213661BA3B</key>
+		<string>https://github.com/Domnom/Simple-Project.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SwiftLoginScreen.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A6152A06A8E54A8A93BC27E956BFDDFD9056C8E0</key>
+		<string>../../../SwiftLoginScreen</string>
+		<key>E80D86D2B7AD7A1BEE05BA4A4FD7B9213661BA3B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Domnom/SuperLogical-simple-project.git</string>
+	<string>https://github.com/Domnom/Simple-Project.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>A6152A06A8E54A8A93BC27E956BFDDFD9056C8E0</string>
+	<string>E80D86D2B7AD7A1BEE05BA4A4FD7B9213661BA3B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E80D86D2B7AD7A1BEE05BA4A4FD7B9213661BA3B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Simple%20Project</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

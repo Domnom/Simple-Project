@@ -70,8 +70,8 @@ class LoginVC: UIViewController {
                 let res = response as NSHTTPURLResponse!;
                 
                 NSLog ("Response test: %@", NSString(data:urlData!, encoding:NSUTF8StringEncoding)!)
-                // NSLog("Response code: %1d", res.statusCode);   //Fatal error here
-
+                //NSLog("Response code: %1d", res.statusCode);   //Fatal error here
+                //NSLog (responseError!.localizedDescription)
                 // When user enters an invalid pin, NSURLResponse? returns nil
                 // NSError? does not supply the required information (no httpcode)
                 // Extract error array from NSData? and print to user
@@ -80,6 +80,8 @@ class LoginVC: UIViewController {
                  *  - if sent pin is invalid, res == nil
                  *  - Use else to extract error code from jsonData and print to user
                  */
+                
+                
                 if (res == nil || res.statusCode >= 200 && res.statusCode < 300) {
                     var responseData:NSString = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
                     
@@ -96,14 +98,15 @@ class LoginVC: UIViewController {
                //VALID PIN
                     if (success == 1) {
                         NSLog("Login Success!");
-                        
+                        let token = jsonData["token"] as NSString
                         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                         
                         prefs.setObject(pin, forKey:"PIN")
+                        prefs.setObject(token, forKey:"TOKEN")
                         prefs.setInteger(1, forKey: "ISLOGGEDIN")
                         prefs.synchronize()
                         self.dismissViewControllerAnimated(true, completion:nil)
-                   
+                        
                         
                 //INVALID PIN
                     } else {

@@ -30,7 +30,9 @@ class ViewController: UIViewController {
             self.performSegueWithIdentifier("goto_login", sender: self)
         } else {
             self.usernameLabel.text = prefs.valueForKey("PIN") as NSString
+            NSLog ("The token string is: %@", (prefs.valueForKey("TOKEN") as NSString))
         }
+        
     }
 
     @IBAction func logoutTapped(sender: UIButton) {

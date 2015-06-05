@@ -61,6 +61,7 @@ class LoginVC: UIViewController {
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.setValue("applicaton/json", forHTTPHeaderField: "Accept")
             
+            
             var responseError: NSError?
             var response: NSURLResponse?
             

@@ -15,6 +15,7 @@
 		F5A082F71B182C6900E5E321 /* SwiftLoginScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A082F61B182C6900E5E321 /* SwiftLoginScreenTests.swift */; };
 		F5A083031B1835F900E5E321 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A083021B1835F900E5E321 /* LoginVC.swift */; };
 		F5A083051B18371E00E5E321 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A083041B18371E00E5E321 /* SignupVC.swift */; };
+		F5D3971E1B252F2E0064BFE3 /* VisitorTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3971D1B252F2E0064BFE3 /* VisitorTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		F5A082F61B182C6900E5E321 /* SwiftLoginScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLoginScreenTests.swift; sourceTree = "<group>"; };
 		F5A083021B1835F900E5E321 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F5A083041B18371E00E5E321 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		F5D3971D1B252F2E0064BFE3 /* VisitorTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				F5A082DE1B182C6900E5E321 /* Supporting Files */,
 				F5A083021B1835F900E5E321 /* LoginVC.swift */,
 				F5A083041B18371E00E5E321 /* SignupVC.swift */,
+				F5D3971D1B252F2E0064BFE3 /* VisitorTableController.swift */,
 			);
 			path = SwiftLoginScreen;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				F5A082E31B182C6900E5E321 /* ViewController.swift in Sources */,
 				F5A082E11B182C6900E5E321 /* AppDelegate.swift in Sources */,
 				F5A083031B1835F900E5E321 /* LoginVC.swift in Sources */,
+				F5D3971E1B252F2E0064BFE3 /* VisitorTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +417,7 @@
 				F5A082FC1B182C6900E5E321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5A082FD1B182C6900E5E321 /* Build configuration list for PBXNativeTarget "SwiftLoginScreenTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				F5A082FF1B182C6900E5E321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

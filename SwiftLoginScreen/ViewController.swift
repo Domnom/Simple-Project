@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var usernameLabel: UILabel!
     var testVar = 1
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,20 +37,7 @@ class ViewController: UIViewController {
             
         } else {
             
-            let token:NSString = prefs.valueForKey("TOKEN") as NSString
-            var url:NSURL = NSURL(string: "https://swipedon.ninja/api/visitors")!
-            
-            var request:NSMutableURLRequest = NSMutableURLRequest (URL: url)
-            request.HTTPMethod = "GET"
-            request.setValue(token, forHTTPHeaderField: "VB-Auth-Token")
-            
-            var response:NSURLResponse?
-            var responseError:NSError?
-            
-            //execute request
-            let urlData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &responseError)
-            
-            NSLog ("Visitors GET output: %@", NSString(data:urlData!, encoding:NSUTF8StringEncoding)!)
+
             
             
         }
@@ -66,9 +57,7 @@ class ViewController: UIViewController {
             
         }
         
-        
     }
-
 
     @IBAction func logoutTapped(sender: UIButton) {
         let appDomain = NSBundle.mainBundle().bundleIdentifier
@@ -76,5 +65,12 @@ class ViewController: UIViewController {
         
         self.performSegueWithIdentifier("goto_login", sender: self)
     }
+    
+    
+    
+    func getValue () -> Int {
+        return testVar
+    }
+    
 }
 
